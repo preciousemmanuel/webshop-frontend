@@ -6,6 +6,7 @@ import NavBar from "./components/Nav";
  import DeliveryInfo from "./pages/DeliveryInfo";
 import SuccessOrder from "./pages/SuccessOrder";
 import Product from "./pages/Product";
+import SearchProducts from "./pages/SearchProducts";
 
 
 
@@ -18,6 +19,7 @@ const MainRoute=()=>(
     <Route exact path="/cart" component={Cart} />
     <Route exact path="/deliveryinfo" component={DeliveryInfo} />
     <Route exact path="/product/:productid" component={Product} />
+    <Route exact path="/search/:search" component={SearchProducts} />
     
       
     </Switch>

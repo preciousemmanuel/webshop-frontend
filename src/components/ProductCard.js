@@ -44,7 +44,7 @@ const handleAddToCart=()=>{
   <div className="card-body">
     <h5 className="card-title">{product.name}</h5>
     <p className="card-text">
-     {product.description.length>50?product.description.substring(0,50):product.description}
+     {product.description&& product.description.length>50?product.description.substring(0,50):product.description}
 
     </p>
     <p className="card-text"><CurrencyFormat value={product.price}  displayType={'text'} thousandSeparator={true} prefix={'₦'} /></p>

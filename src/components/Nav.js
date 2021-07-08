@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector ,useDispatch} from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
+import { getSearchProducts, searchField } from "../redux/actions/product_action";
 
 const NavBar=()=>{
  const {cart}=useSelector((state)=>state.cart);
-    console.log("cart",cart)
+ const {search}=useSelector((state)=>state.product);
+ const history=useHistory();
+ const dispatch=useDispatch();
+ const handleSubmit=(e)=>{
+   e.preventDefault();
+   history.push(`/search/${search}`);
+   
+ }
+    console.log("cart",search)
 return(
    
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,15 +43,17 @@ return(
         />
       </Link>
       
-   <form class="d-flex input-group w-auto">
+   <form class="d-flex input-group w-auto" onSubmit={handleSubmit}>
       <input
         type="search"
+        value={search}
+        onChange={(e)=>dispatch(searchField(e.target.value) )}
         class="form-control rounded"
         placeholder="Search Product"
         aria-label="Search"
         aria-describedby="search-addon"
       />
-      <span class="input-group-text border-0" id="search-addon">
+      <span class="input-group-text border-0"  id="search-addon">
         <i class="fas fa-search"></i>
       </span>
     </form>
