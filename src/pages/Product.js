@@ -53,7 +53,7 @@ const handleAddToCart=()=>{
     </center>
     
     </div>
-    <div style={{width:"200px"}}>
+    {/* <div style={{width:"200px"}}>
     <div
   id="carouselBasicExample"
   class="carousel slide carousel-fade"
@@ -143,7 +143,7 @@ const handleAddToCart=()=>{
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-    </div>
+    </div> */}
 
    </div>
 <div className="well col-md-4" >
@@ -153,7 +153,33 @@ const handleAddToCart=()=>{
     
 </div>
 </div>
-
+<div class="accordion" id="accordionExample">
+ <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo"
+      >
+       When Do I Get My Order
+      </button>
+    </h2>
+    <div
+      id="collapseTwo"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingTwo"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+      You get your order immediately we recieve your payment.
+      </div>
+    </div>
+  </div>
+  
+</div>
         </div>
     )
 }
