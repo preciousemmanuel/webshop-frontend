@@ -39,6 +39,7 @@ export const getSearchProducts=(search)=>{
         })
         try {
             
+            
             const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URI}/stock/search?search=${search}`);
 
         console.log("seardd",data[0]);

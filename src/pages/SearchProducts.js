@@ -29,6 +29,9 @@ const SearchProducts=()=>{
 </center>)}
 
 <div className="row">
+    {searchProducts && searchProducts<1 && (
+        <center ><h4>No product found for this search</h4></center>
+    )}
 {searchProducts && searchProducts.length>0 && searchProducts.map(product=>(
   <ProductCard product={product} />
 ))}
